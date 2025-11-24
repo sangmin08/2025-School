@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 카드게임</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home {
+            width: 400px;
+            height: 300px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .home > div{
+            margin: 50px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 50px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff8b6;
+            color: #1A3F66;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffe600;
+            color: #000000;
+        }
+
+        /* 모달 스타일 */
+        #over {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        #ex {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #ex h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div>
+            <h1>21 카드게임</h1>
+            <button id="pl_btn" onclick="location.href='game.html'">놀이 시작</button>
+            <button id="ex_btn">놀이 규칙</button>
+        </div>
+    </div>
+    <div id="over"></div>
+    <div id="ex">
+        <h3>놀이 목표</h3>
+        <p>카드를 뽑아 숫자 합이 21에 가장 가까운 사람이 이기는 간단한 숫자 놀이입니다.</p>
+        <p>하지만 21을 넘기면 실패! 다시 도전하세요.</p>
+        <h3>간단 규칙</h3>
+        <p>플레이어와 진행자는 각각 카드 2장을 받고, 진행자는 한 장을 비밀로 둡니다.</p>
+        <p>플레이어는 자신의 합계를 보고 추가로 받을지 멈출지 선택합니다. (21 넘으면 실패!)</p>
+        <p>플레이어가 멈추면 진행자는 비밀 카드를 공개하고, 합이 17 미만이면 카드 한 장을 더 받습니다.</p>
+        <p>두 사람 모두 21 이하라면 21에 가까운 사람이 승리, 넘긴 사람은 실패입니다. 숫자가 같으면 무승부!</p>
+    </div>
+
+    <script>
+        const openBtn = document.getElementById('ex_btn');
+        const modal = document.getElementById('ex');
+        const overlay = document.getElementById('over');
+        
+        function openModal() {
+            modal.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+        }
+
+        openBtn.addEventListener('click', openModal);
+        overlay.addEventListener('click', closeModal); // 오버레이 클릭시 닫기
+    </script>
+</body>
+</html>

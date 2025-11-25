@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="game.css">
 </head>
+
 <body>
     <!-- 들어가면 '놀이를 시작합니다'라는 안내문을 2초간 띄우고 시작한다     -->
-    <div id="message" style="display: block;"><h1>놀이를 시작합니다!</h1></div>
     <div class="gameBox">
         <div id="ai_p">
-            <p style="top: 0;">진행자 숫자 카드</p>
+            <p>진행자 숫자 카드</p>
             <div id="card_space">
-                <div id="card">
+                <!-- <div id="card">
                     <h2>1</h2>
                 </div>
                 <div id="card">
@@ -21,15 +22,30 @@
                 </div>
                 <div id="card">
                     <h2>1</h2>
-                </div>
+                </div> -->
             </div>
-            <p>숫자 총합</p>
+            <p>숫자 총합 : 0</p>
+        </div>
+        <div id="text_box">
+            <button id="start_btn">시작하기</button>
         </div>
         <div id="my_p">
-            <p style="top: 0;">나의 숫자 카드</p>
-            <p>숫자 총합</p>
+            <p>나의 숫자 카드</p>
+            <div id="card_space">
+                <!-- <div id="card">
+                    <h2>1</h2>
+                </div>
+                <div id="card">
+                    <h2>1</h2>
+                </div>
+                <div id="card">
+                    <h2>1</h2>
+                </div> -->
+            </div>
+            <p>숫자 총합 : 0</p>
         </div>
     </div>
     <script src="game.js"></script>
 </body>
+
 </html>

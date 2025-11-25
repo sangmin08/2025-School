@@ -33,7 +33,7 @@ body {
     border: 1px solid #000;
 }
 
-#card_space {
+#ai_card_space, #my_card_space {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ body {
     height: 140px;
 }
 
-#card {
+.card {
     border: 1px solid #000;
     width: 80px;
     height: 100px;

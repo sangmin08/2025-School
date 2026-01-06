@@ -102,6 +102,24 @@ function msg() {
     }
 }
 
+function showDealerWin() {
+    txtbox.innerHTML = ''
+    txtbox.textContent = "진행자의 승리로 게임종료!"
+    txtbox.appendChild(homeBtn)
+    txtbox.appendChild(resetBtn)
+    ai_total.textContent = `숫자 총합 : ${ai_num}`
+    return
+}
+
+
+function showDraw() {
+    txtbox.innerHTML = ''
+    txtbox.textContent = "비겼습니다!"
+    txtbox.appendChild(homeBtn)
+    txtbox.appendChild(resetBtn)
+    return
+}
+
 function aiGetCardUntilWin() {
 
     txtbox.textContent = '진행자가 카드 받는중...'
@@ -112,22 +130,29 @@ function aiGetCardUntilWin() {
             <div class="card"><h2>${rannum}</h2></div>
         `
         ai_num += rannum
-        ai_total.textContent = `숫자 총합 : ${ai_num}`
-
         if (ai_num > 21) {
             txtbox.innerHTML = ''
             txtbox.textContent = "플레이어의 승리로 게임종료!"
             txtbox.appendChild(homeBtn)
             txtbox.appendChild(resetBtn)
+            ai_total.textContent = `숫자 총합 : ${ai_num}`
+            return
         }
-
-        if (ai_num >= my_num) {
+        if (ai_num > my_num) {
             txtbox.innerHTML = ''
             txtbox.textContent = "진행자의 승리로 게임종료!"
             txtbox.appendChild(homeBtn)
             txtbox.appendChild(resetBtn)
+            ai_total.textContent = `숫자 총합 : ${ai_num}`
+            return
         }
-
+        if (ai_num == my_num) {
+            txtbox.innerHTML = ''
+            txtbox.textContent = "비겼습니다!"
+            txtbox.appendChild(homeBtn)
+            txtbox.appendChild(resetBtn)
+            return
+        }
         aiGetCardUntilWin()
 
     }, 1500)

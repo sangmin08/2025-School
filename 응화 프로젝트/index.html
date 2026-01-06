@@ -5,74 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>21 카드게임</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* ===== 전체 배경 ===== */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd1dc, #ffe5b4);
+    font-family: 'Comic Sans MS', 'Comic Neue', sans-serif;
+    color: #333;
+}
 
-        .home {
-            width: 400px;
-            height: 300px;
-            margin: auto;
-            text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+/* ===== 홈 화면 박스 ===== */
+.home {
+    width: 400px;
+    height: 320px;
+    margin: auto;
+    text-align: center;
+    background-color: #fff8e7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 2px solid #ffe0b2;
+}
 
-        .home > div{
-            margin: 50px;
-        }
+/* 제목 */
+.home h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff6f91;
+    margin-bottom: 25px;
+}
 
-        button {
-            margin: 10px;
-            padding: 10px 50px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #fff8b6;
-            color: #1A3F66;
-            transition: background-color 0.3s;
-        }
+/* 버튼 스타일 통일 */
+.home button {
+    margin: 10px;
+    padding: 12px 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffcc80, #ffd54f);
+    color: #6d4c41;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
 
-        button:hover {
-            background-color: #ffe600;
-            color: #000000;
-        }
+.home button:hover {
+    background: linear-gradient(145deg, #ffd54f, #ffe082);
+}
 
-        /* 모달 스타일 */
-        #over {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-        }
+/* ===== 모달 오버레이 ===== */
+#over {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(2px);
+}
 
-        #ex {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+/* ===== 모달 박스 ===== */
+#ex {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff8e7;
+    padding: 25px 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    max-width: 90%;
+}
 
-        #ex h3 {
-            margin-top: 0;
-        }
+/* 모달 제목 */
+#ex h3 {
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff6f91;
+}
+
+/* 모달 본문 */
+#ex p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6d4c41;
+}
+
+/* 모달 내부 버튼 (있다면) */
+#ex button {
+    margin-top: 15px;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffcc80, #ffd54f);
+    color: #6d4c41;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
     </style>
 </head>
 <body>
